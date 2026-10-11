@@ -95,7 +95,6 @@ fun WeekDayScreen() {
                 Text("Определить день")
             }
 
-
             if (result.isNotEmpty()) {
                 Text(
                     text = result,
