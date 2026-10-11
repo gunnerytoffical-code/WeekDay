@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
@@ -71,5 +72,13 @@ fun WeekDayScreen() {
                     .padding(top = 24.dp),
                 singleLine = true
             )
+
+
+            Button(
+                onClick = { },
+                modifier = Modifier.padding(top = 16.dp)
+            ) {
+                Text("Определить день")
+            }
         }
     }
