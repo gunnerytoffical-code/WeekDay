@@ -45,6 +45,9 @@ fun WeekDayScreen() {
             mutableStateOf("")
         }
 
+        var result by androidx.compose.runtime.remember {
+            mutableStateOf("")
+        }
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -75,10 +78,30 @@ fun WeekDayScreen() {
 
 
             Button(
-                onClick = { },
+                onClick = {
+                    result = when (dayNumber.toIntOrNull()) {
+                        1 -> "Понедельник"
+                        2 -> "Вторник"
+                        3 -> "Среда"
+                        4 -> "Четверг"
+                        5 -> "Пятница"
+                        6 -> "Суббота"
+                        7 -> "Воскресенье"
+                        else -> "Некорректный номер дня"
+                    }
+                },
                 modifier = Modifier.padding(top = 16.dp)
             ) {
                 Text("Определить день")
+            }
+
+
+            if (result.isNotEmpty()) {
+                Text(
+                    text = result,
+                    modifier = Modifier.padding(top = 16.dp),
+                    style = MaterialTheme.typography.titleLarge
+                )
             }
         }
     }
